@@ -19,13 +19,11 @@
                 marginTop: '-150px',
                 opacity: 0
               }, 200)
-              //                     .AddClass('done');
 
             thisInput.closest('li').nextAll('li').animate({
                 marginTop: '150px',
                 opacity: 0
               }, 200)
-              //                    .RemoveClass('done');
             errorMessage(erroEle, '', 'hidden', 0);
 
           });
@@ -42,19 +40,14 @@
           });
 
           $('#next-page').click(function() {
-            var focusInput = $('.questions').find('.active2');
             nextMaster('nextpage');
 
           })
-          
+
           function nextMaster(type) {
             var focusInput = $('.questions').find('.active2').last();
             if (focusInput.val() != '') {
-              if ((focusInput.attr('name') == 'name' || focusInput.attr('name') == 'username') && focusInput.val().length < 2) {
-                errorMessage(erroEle, "isn't your " + focusInput.attr('name') + " bit small. ", 'visible', 1);
-              } else if (focusInput.attr('name') == 'email' && !validateEmail(focusInput.val())) {
-                errorMessage(erroEle, "It doesn't look like a " + focusInput.attr('name'), 'visible', 1);
-              } else if (focusInput.attr('name') == 'phone' && !validatePhone(focusInput.val())) {
+              if (focusInput.attr('name') == 'email' && !validateEmail(focusInput.val())) {
                 errorMessage(erroEle, "It doesn't look like a " + focusInput.attr('name'), 'visible', 1);
               } else {
 
@@ -72,7 +65,7 @@
             var focusInput = $(this);
             if (focusInput.val().length > 1) {
               if ((focusInput.attr('name') == 'email' && !validateEmail(focusInput.val())) ||
-                (focusInput.attr('name') == 'phone' && !validatePhone(focusInput.val()))) {
+                (focusInput.attr('name') == 'number' && !validateNumber(focusInput.val()))) {
                 $('#next-page').css('opacity', 0);
               } else {
                 $('#next-page').css('opacity', 1);
@@ -130,13 +123,9 @@
 
           console.log(focusInput.closest('li'));
 
-          if (focusInput.attr('id') == 'viewpswd') {
-            $("[data-ref='" + focusInput.attr('id') + "']")
-              .addClass('done').html('password');
-            //                    .html(Array(focusInput.val().length+1).join("*"));
-          } else {
-            $("[data-ref='" + focusInput.attr('id') + "']").addClass('done').html(focusInput.val());
-          }
+      
+          $("[data-ref='" + focusInput.attr('id') + "']").addClass('done').html(focusInput.val());
+  
 
           focusInput.removeClass('active2');
           counter++;
@@ -147,8 +136,16 @@
             marginTop: '0px',
             opacity: 1
           }, 200);
-
-          nextli.find('input').focus().addClass('active2');
+          console.log(counter);
+          if (counter <= 2) {
+            nextli.find('select').focus().addClass('active2');
+            $('#next-page').animate({
+              opacity: 1
+            }, 200);
+          }else{
+            nextli.find('input').focus().addClass('active2');
+          }
+          
 
         }
 
@@ -163,6 +160,11 @@
         function validateEmail(email) {
           var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
           return re.test(email);
+        }
+
+        function validateNumber(number){
+          var re = /^-?\d*(\.\d+)?$/; 
+          return re.test(number);
         }
 
         function validatePhone(phone) {
