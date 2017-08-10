@@ -39,15 +39,14 @@
               nextMaster('keypress');
               event.preventDefault();
             }
-
-            $('#next-page').click(function() {
-              var focusInput = $('.questions').find('.active2');
-              nextMaster('nextpage');
-
-            })
-
           });
 
+          $('#next-page').click(function() {
+            var focusInput = $('.questions').find('.active2');
+            nextMaster('nextpage');
+
+          })
+          
           function nextMaster(type) {
             var focusInput = $('.questions').find('.active2').last();
             if (focusInput.val() != '') {
