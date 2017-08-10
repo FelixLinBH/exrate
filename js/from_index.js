@@ -2,14 +2,15 @@
         $(document).ready(function() {
 
           var erroEle = $('.error-message'),
-            focusInput = $('.questions').find('.active');
+            focusInput = $('.questions').find('.active2');
 
           $('.navigation a').click(function() {
+
             nextMaster('navi');
 
             var thisInput = $('#' + $(this).attr('data-ref'));
-            $('.active').removeClass('active');
-            thisInput.focus().addClass('active')
+            $('.active2').removeClass('active2');
+            thisInput.focus().addClass('active2')
             thisInput.closest('li').animate({
               marginTop: '0px',
               opacity: 1
@@ -40,7 +41,7 @@
             }
 
             $('#next-page').click(function() {
-              var focusInput = $('.questions').find('.active');
+              var focusInput = $('.questions').find('.active2');
               nextMaster('nextpage');
 
             })
@@ -48,7 +49,7 @@
           });
 
           function nextMaster(type) {
-            var focusInput = $('.questions').find('.active');
+            var focusInput = $('.questions').find('.active2').last();
             if (focusInput.val() != '') {
               if ((focusInput.attr('name') == 'name' || focusInput.attr('name') == 'username') && focusInput.val().length < 2) {
                 errorMessage(erroEle, "isn't your " + focusInput.attr('name') + " bit small. ", 'visible', 1);
@@ -138,7 +139,7 @@
             $("[data-ref='" + focusInput.attr('id') + "']").addClass('done').html(focusInput.val());
           }
 
-          focusInput.removeClass('active');
+          focusInput.removeClass('active2');
           counter++;
 
           var nextli = focusInput.closest('li').next('li');
@@ -148,7 +149,7 @@
             opacity: 1
           }, 200);
 
-          nextli.find('input').focus().addClass('active');
+          nextli.find('input').focus().addClass('active2');
 
         }
 
