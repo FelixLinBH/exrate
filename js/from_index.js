@@ -76,13 +76,13 @@
             }
           });
 
-          $("#password").keyup(function(event) {
-            var focusInput = $(this);
-            $("#viewpswd").val(focusInput.val());
-            if (focusInput.val().length > 1) {
-              $('#next-page').css('opacity', 1);
-            }
-          });
+          // $("#password").keyup(function(event) {
+          //   var focusInput = $(this);
+          //   $("#viewpswd").val(focusInput.val());
+          //   if (focusInput.val().length > 1) {
+          //     $('#next-page').css('opacity', 1);
+          //   }
+          // });
 
           $('#signup').click(function() {
             $('.navigation').fadeOut(400).css({
@@ -137,7 +137,7 @@
             opacity: 1
           }, 200);
           console.log(counter);
-          if (counter <= 2) {
+          if (counter <= 3) {
             nextli.find('select').focus().addClass('active2');
             $('#next-page').animate({
               opacity: 1
