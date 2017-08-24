@@ -171,3 +171,207 @@
           var re = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
           return re.test(phone);
         }
+
+        var $table = $('#fresh-table'),
+        $alertBtn = $('#alertBtn'),
+        full_screen = false;
+    var partJson =
+   {
+  "particles": {
+    "number": {
+      "value": 40,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5.2
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 100,
+      "color": "#ffffff",
+      "opacity": 0.3,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 4,
+      "direction": "none",
+      "random": true,
+      "straight": false,
+      "out_mode": "bounce",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "window",
+    "events": {
+      "onhover": {
+        "enable": false,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+};
+    var jsonUri = "data:text/plain;base64,"+window.btoa(JSON.stringify(partJson));
+
+    $().ready(function(){
+        $table.bootstrapTable({
+            toolbar: ".toolbar",
+
+            showRefresh: false,
+            search: false,
+            showToggle: false,
+            showColumns: false,
+            pagination: true,
+            striped: true,
+            pageSize: 7,
+            pageList: [7],
+            
+            formatShowingRows: function(pageFrom, pageTo, totalRows){
+                //do nothing here, we don't want to show the text "showing x of y from..." 
+            },
+            formatRecordsPerPage: function(pageNumber){
+                return pageNumber + " rows visible";
+            },
+            icons: {
+                refresh: 'fa fa-refresh',
+                toggle: 'fa fa-th-list',
+                columns: 'fa fa-columns',
+                detailOpen: 'fa fa-plus-circle',
+                detailClose: 'fa fa-minus-circle'
+            }
+        });
+        
+                    
+        
+        $(window).resize(function () {
+            $table.bootstrapTable('resetView');
+        });
+
+        
+        window.operateEvents = {
+            'click .like': function (e, value, row, index) {
+                alert('You click like icon, row: ' + JSON.stringify(row));
+                console.log(value, row, index);
+            },
+            'click .edit': function (e, value, row, index) {
+                alert('You click edit icon, row: ' + JSON.stringify(row));
+                console.log(value, row, index);    
+            },
+            'click .remove': function (e, value, row, index) {
+                $table.bootstrapTable('remove', {
+                    field: 'id',
+                    values: [row.id]
+                });
+        
+            }
+        };
+        
+        $alertBtn.click(function () {
+            alert("You pressed on Alert");
+        });
+        
+        particlesJS.load('particles-js', jsonUri, function() {
+          console.log('callback - particles.js config loaded');
+        });
+
+        // select option
+        $('.selectpicker').selectpicker({
+          size: 4
+        });
+
+        $('.selectpicker2').selectpicker({
+          size: 2
+        });
+        
+ 
+    });
+        
+
+    function operateFormatter(value, row, index) {
+        return [
+            '<a rel="tooltip" title="Like" class="table-action like" href="javascript:void(0)" title="Like">',
+                '<i class="fa fa-heart"></i>',
+            '</a>',
+            '<a rel="tooltip" title="Edit" class="table-action edit" href="javascript:void(0)" title="Edit">',
+                '<i class="fa fa-edit"></i>',
+            '</a>',
+            '<a rel="tooltip" title="Remove" class="table-action remove" href="javascript:void(0)" title="Remove">',
+                '<i class="fa fa-remove"></i>',
+            '</a>'
+        ].join('');
+    }
