@@ -3,7 +3,10 @@
 
           var erroEle = $('.error-message'),
             focusInput = $('.questions').find('.active2');
-
+          $('.item').click(function(){
+            $('.item').removeClass("select");
+            $(this).addClass("select");
+          })
           $('.navigation a').click(function() {
 
             nextMaster('navi');

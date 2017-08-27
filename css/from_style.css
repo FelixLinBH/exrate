@@ -389,13 +389,20 @@ button.btn.dropdown-toggle.btn-default {
             width: 100%;
         }
         .row-flag .item{
+            margin-top: 3px;
+            margin-bottom: 3px;
             display: inline-grid;
+        }
+        .row-flag .item:hover {
+            border: 1px solid;
+        }
+        .row-flag .item.select {
+            border: 1px solid;
         }
         .row-flag img{
             margin-left: 5px;
             margin-right: 5px;
-            margin-top: 10px;
-            margin-bottom: 10px;
+            height: 50px;
         }
     /*profile*/
     .nav.nav-justified > li > a { position: relative; }
@@ -441,3 +448,9 @@ button.btn.dropdown-toggle.btn-default {
         right: 20px;
         bottom: 0px;
     }  
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
