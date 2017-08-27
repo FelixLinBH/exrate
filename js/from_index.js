@@ -378,3 +378,50 @@
             '</a>'
         ].join('');
     }
+
+    //Socket
+    var currency = [];
+    $().ready(function(){
+        var socket = io('http://localhost:3000');
+      socket.on('connect', function(){
+        console.log("connect");
+      });
+      socket.on('event', function(source){
+        if (source == "end") {
+          socket.disconnect();
+        }
+      });
+      socket.on('message', function(source){
+        var i = 0;
+       
+
+        for (var item in source){
+          i++;
+          var tData = LZString.decompressFromUTF16(source[item]);
+          var jsonData = JSON.parse(tData);
+          for(var key in jsonData){
+            currency[key] = (currency[key] === undefined)?{}:currency[key];
+            currency[key][item] = jsonData[key];
+          }
+        }
+        console.log(currency);
+      });
+      socket.on('disconnect', function(){
+        console.log("disconnect");
+      });
+
+      // $.ajax({
+      //   type: "POST",
+      //   url: "http://localhost:3000/subscription",
+      //   // data: JSON.stringify({
+      //   //     first_name: "test@test.com",
+      //   //     last_name: "test@test.com",
+      //   // }),
+      //   contentType: "application/json",
+      //   dataType: 'json',
+      //   success: function(res){
+      //     console.log(res);
+      //   },
+        
+      // });
+    });

@@ -189,25 +189,6 @@
 
 
 /*select option*/
-.pkr {
-  background-image:url(../img/flag/united_states_of_america_flag.png);
-  width:45px;
-  height:23px;
-  }
-  
-.gbp {
-  background-image:url(../img/flag/united_states_of_america_flag.png);
-  width:45px;
-  height:23px;
-  }
-
-.usd {
-  background-image:url(../img/flag/united_states_of_america_flag.png);
-  width:45px;
-  height:23px;
-  }
-
-
 .bootstrap-select > .dropdown-toggle {
    /* color:#fff;
     border-radius: 0px;

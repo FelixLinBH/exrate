@@ -10,6 +10,7 @@
   <script language="javascript" src="./lz-string.min.js"></script>
   <script src="./../vendor/jquery/jquery.js"></script>
   <script>
+    var currency = [];
     $().ready(function(){
         var socket = io('http://localhost:3000');
       socket.on('connect', function(){
@@ -22,20 +23,15 @@
       });
       socket.on('message', function(source){
         var i = 0;
-        var currency = [];
+       
+
         for (var item in source){
           i++;
           var tData = LZString.decompressFromUTF16(source[item]);
-         
-          // console.log(tData);
           var jsonData = JSON.parse(tData);
           for(var key in jsonData){
-            // console.log(key);
-            currency[key] = [];
-            // if (!currency.indexOf(key)) {
-            //   currency.push(key);
-            // }
-            
+            currency[key] = (currency[key] === undefined)?{}:currency[key];
+            currency[key][item] = jsonData[key];
           }
         }
         console.log(currency);
@@ -44,20 +40,20 @@
         console.log("disconnect");
       });
 
-      $.ajax({
-        type: "POST",
-        url: "http://localhost:3000/subscription",
-        // data: JSON.stringify({
-        //     first_name: "test@test.com",
-        //     last_name: "test@test.com",
-        // }),
-        contentType: "application/json",
-        dataType: 'json',
-        success: function(res){
-          console.log(res);
-        },
+      // $.ajax({
+      //   type: "POST",
+      //   url: "http://localhost:3000/subscription",
+      //   // data: JSON.stringify({
+      //   //     first_name: "test@test.com",
+      //   //     last_name: "test@test.com",
+      //   // }),
+      //   contentType: "application/json",
+      //   dataType: 'json',
+      //   success: function(res){
+      //     console.log(res);
+      //   },
         
-      });
+      // });
     });
   
     </script>
