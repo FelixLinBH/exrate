@@ -379,7 +379,44 @@
         ].join('');
     }
 
+    function select(currencyTarget){
+      $table.bootstrapTable('removeAll');
+      for(var bank in currency[currencyTarget]){
+        $table.bootstrapTable('insertRow', {
+            index: 1,
+            row: {
+                bankName: bankMapping[bank],
+                cashbuy: currency[currencyTarget][bank]['cashbuy'],
+                cashsell: currency[currencyTarget][bank]['cashsell'],
+                bkbuy: currency[currencyTarget][bank]['bkbuy'],
+                bksell: currency[currencyTarget][bank]['bksell'],
+            }
+        });
+      }
+    }
     //Socket
+    var bankMapping = {
+      "cathaybk":"國泰世華銀行",
+      "fubonbk":"富邦銀行",
+      "megabk":"兆豐銀行",
+      "twbk":"台灣銀行",
+      "chbbk":"彰化銀行",
+      "esunbk":"玉山銀行",
+      "taishinbk":"台新銀行",
+      "hncbbk":"華南銀行",
+      "tcbbk":"合作金庫銀行",
+      "ctbcbk":"中國信託銀行",
+      "feibbk":"遠東商業銀行",
+      "sinopacbk":"永豐銀行",
+      "kgibk":"凱基銀行",
+      "tcbk":"大眾銀行",
+      "entiebk":"安泰銀行",
+      "scbk":"上海商業銀行",
+      "dbsbk":"星展銀行",
+      "netbk":"日盛銀行",
+      "hsbcbk":"匯豐銀行",
+      "firstbk":"第一銀行"
+    };
     var currency = [];
     $().ready(function(){
         var socket = io('http://localhost:3000');
@@ -392,6 +429,7 @@
         }
       });
       socket.on('message', function(source){
+
         var i = 0;
        
 
@@ -404,7 +442,6 @@
             currency[key][item] = jsonData[key];
           }
         }
-        console.log(currency);
       });
       socket.on('disconnect', function(){
         console.log("disconnect");
