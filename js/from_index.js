@@ -426,25 +426,46 @@
     var currency = [];
     var currencySelect = "";
 
-    function selectCurrency(currencyTarget){
+    function updateSelectCurrency(currencyTarget){
+      if (currencyTarget == "") {
+        currencyTarget = "USD";
+      }
+
       if (currencyTarget == currencySelect) {
-        return;
+        for(var bank in currency[currencyTarget]){
+          var bootstrapTableIndex = $("td:contains('"+bankMapping[bank]+"')").parent().data('index');
+          if (bootstrapTableIndex === undefined) {
+            continue;
+          }
+          $table.bootstrapTable("updateRow", {
+              index:  bootstrapTableIndex,
+              row: {
+                  bankName: bankMapping[bank],
+                  cashbuy: currency[currencyTarget][bank]['cashbuy'],
+                  cashsell: currency[currencyTarget][bank]['cashsell'],
+                  bkbuy: currency[currencyTarget][bank]['bkbuy'],
+                  bksell: currency[currencyTarget][bank]['bksell'],
+              }
+          });
+        }
+      }else{
+        currencySelect = currencyTarget;
+        $table.bootstrapTable('removeAll');
+        for(var bank in currency[currencyTarget]){
+          $table.bootstrapTable("insertRow", {
+              index:  1,
+              row: {
+                  bankName: bankMapping[bank],
+                  cashbuy: currency[currencyTarget][bank]['cashbuy'],
+                  cashsell: currency[currencyTarget][bank]['cashsell'],
+                  bkbuy: currency[currencyTarget][bank]['bkbuy'],
+                  bksell: currency[currencyTarget][bank]['bksell'],
+              }
+          });
+        }
       }
-      currencySelect = currencyTarget;
-      $table.bootstrapTable('removeAll');
-      for(var bank in currency[currencyTarget]){
-        $table.bootstrapTable('insertRow', {
-            index: 1,
-            id: bankMappingID[bank],
-            row: {
-                bankName: bankMapping[bank],
-                cashbuy: currency[currencyTarget][bank]['cashbuy'],
-                cashsell: currency[currencyTarget][bank]['cashsell'],
-                bkbuy: currency[currencyTarget][bank]['bkbuy'],
-                bksell: currency[currencyTarget][bank]['bksell'],
-            }
-        });
-      }
+      
+      
     }
 
     $().ready(function(){
@@ -452,7 +473,7 @@
           $('.item').click(function(){
             $('.item').removeClass("select");
             $(this).addClass("select");
-            selectCurrency($(this).data('item').toUpperCase());
+            updateSelectCurrency($(this).data('item').toUpperCase());
             
           });
 
@@ -480,7 +501,7 @@
           }
         }
 
-        selectCurrency("USD");
+        updateSelectCurrency(currencySelect);
       });
       socket.on('disconnect', function(){
         console.log("disconnect");
