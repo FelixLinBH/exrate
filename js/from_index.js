@@ -3,10 +3,8 @@
 
           var erroEle = $('.error-message'),
             focusInput = $('.questions').find('.active2');
-          $('.item').click(function(){
-            $('.item').removeClass("select");
-            $(this).addClass("select");
-          })
+
+
           $('.navigation a').click(function() {
 
             nextMaster('navi');
@@ -379,21 +377,7 @@
         ].join('');
     }
 
-    function select(currencyTarget){
-      $table.bootstrapTable('removeAll');
-      for(var bank in currency[currencyTarget]){
-        $table.bootstrapTable('insertRow', {
-            index: 1,
-            row: {
-                bankName: bankMapping[bank],
-                cashbuy: currency[currencyTarget][bank]['cashbuy'],
-                cashsell: currency[currencyTarget][bank]['cashsell'],
-                bkbuy: currency[currencyTarget][bank]['bkbuy'],
-                bksell: currency[currencyTarget][bank]['bksell'],
-            }
-        });
-      }
-    }
+    
     //Socket
     var bankMapping = {
       "cathaybk":"國泰世華銀行",
@@ -417,8 +401,61 @@
       "hsbcbk":"匯豐銀行",
       "firstbk":"第一銀行"
     };
+    var bankMappingID = {
+      "cathaybk":1,
+      "fubonbk":2,
+      "megabk":3,
+      "twbk":4,
+      "chbbk":5,
+      "esunbk":6,
+      "taishinbk":7,
+      "hncbbk":8,
+      "tcbbk":9,
+      "ctbcbk":10,
+      "feibbk":11,
+      "sinopacbk":12,
+      "kgibk":13,
+      "tcbk":14,
+      "entiebk":15,
+      "scbk":16,
+      "dbsbk":17,
+      "netbk":18,
+      "hsbcbk":19,
+      "firstbk":20
+    };
     var currency = [];
+    var currencySelect = "";
+
+    function selectCurrency(currencyTarget){
+      if (currencyTarget == currencySelect) {
+        return;
+      }
+      currencySelect = currencyTarget;
+      $table.bootstrapTable('removeAll');
+      for(var bank in currency[currencyTarget]){
+        $table.bootstrapTable('insertRow', {
+            index: 1,
+            id: bankMappingID[bank],
+            row: {
+                bankName: bankMapping[bank],
+                cashbuy: currency[currencyTarget][bank]['cashbuy'],
+                cashsell: currency[currencyTarget][bank]['cashsell'],
+                bkbuy: currency[currencyTarget][bank]['bkbuy'],
+                bksell: currency[currencyTarget][bank]['bksell'],
+            }
+        });
+      }
+    }
+
     $().ready(function(){
+
+          $('.item').click(function(){
+            $('.item').removeClass("select");
+            $(this).addClass("select");
+            selectCurrency($(this).data('item').toUpperCase());
+            
+          });
+
         var socket = io('http://localhost:3000');
       socket.on('connect', function(){
         console.log("connect");
@@ -442,6 +479,8 @@
             currency[key][item] = jsonData[key];
           }
         }
+
+        selectCurrency("USD");
       });
       socket.on('disconnect', function(){
         console.log("disconnect");
