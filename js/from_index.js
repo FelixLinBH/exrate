@@ -401,28 +401,7 @@
       "hsbcbk":"匯豐銀行",
       "firstbk":"第一銀行"
     };
-    var bankMappingID = {
-      "cathaybk":1,
-      "fubonbk":2,
-      "megabk":3,
-      "twbk":4,
-      "chbbk":5,
-      "esunbk":6,
-      "taishinbk":7,
-      "hncbbk":8,
-      "tcbbk":9,
-      "ctbcbk":10,
-      "feibbk":11,
-      "sinopacbk":12,
-      "kgibk":13,
-      "tcbk":14,
-      "entiebk":15,
-      "scbk":16,
-      "dbsbk":17,
-      "netbk":18,
-      "hsbcbk":19,
-      "firstbk":20
-    };
+    
     var currency = [];
     var currencySelect = "";
 
@@ -522,3 +501,44 @@
         
       // });
     });
+
+    /**
+ * Bootstrap Table Chinese translation
+ * Author: Zhixin Wen<wenzhixin2010@gmail.com>
+ */
+(function ($) {
+    'use strict';
+
+    $.fn.bootstrapTable.locales['zh-TW'] = {
+        formatLoadingMessage: function () {
+            return '正在努力地載入資料，請稍候……';
+        },
+        formatRecordsPerPage: function (pageNumber) {
+            return '每頁顯示 ' + pageNumber + ' 項記錄';
+        },
+        formatShowingRows: function (pageFrom, pageTo, totalRows) {
+            return '顯示第 ' + pageFrom + ' 到第 ' + pageTo + ' 項記錄，總共 ' + totalRows + ' 項記錄';
+        },
+        formatSearch: function () {
+            return '搜尋';
+        },
+        formatNoMatches: function () {
+            return '正在努力地載入資料，請稍候……';
+        },
+        formatPaginationSwitch: function () {
+            return '隱藏/顯示分頁';
+        },
+        formatRefresh: function () {
+            return '重新整理';
+        },
+        formatToggle: function () {
+            return '切換';
+        },
+        formatColumns: function () {
+            return '列';
+        }
+    };
+
+    $.extend($.fn.bootstrapTable.defaults, $.fn.bootstrapTable.locales['zh-TW']);
+
+})(jQuery);
