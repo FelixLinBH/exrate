@@ -1284,6 +1284,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   padding-left: 18px !important;
 }
 .fresh-table .bootstrap-table .table thead > tr > th:first-child {
+  width: 20%;
   padding-left: 10px !important;
 }
 .fresh-table .table > thead > tr > th,

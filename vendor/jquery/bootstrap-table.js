@@ -1150,12 +1150,14 @@
             this.pageTo = this.options.totalRows;
         }
 
+
+        if (this.totalPages > 1) {
         html.push(
             '<div class="pull-' + this.options.paginationDetailHAlign + ' pagination-detail">',
             '<span class="pagination-info">',
             this.options.formatShowingRows(this.pageFrom, this.pageTo, this.options.totalRows),
             '</span>');
-
+        }
         html.push('<span class="page-list">');
 
         var pageNumber = [
