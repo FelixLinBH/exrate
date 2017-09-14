@@ -368,6 +368,10 @@ button.btn.dropdown-toggle.btn-default {
         .row-flag {
             display: inline-block;
             width: 100%;
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-top: 1%;
+            padding-bottom: 1%;
         }
         .row-flag .item{
             margin-top: 3px;
