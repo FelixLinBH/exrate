@@ -376,13 +376,16 @@ button.btn.dropdown-toggle.btn-default {
         .row-flag .item{
             margin-top: 3px;
             margin-bottom: 3px;
-            display: inline-grid;
+            display: inline-block;
         }
         .row-flag .item:hover {
             border: 1px solid;
         }
         .row-flag .item.select {
             border: 1px solid;
+        }
+        .row-flag .item .label{
+            display: block;
         }
         .row-flag img{
             margin-left: 5px;
