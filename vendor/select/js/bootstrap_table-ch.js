@@ -2,7 +2,7 @@
  * Bootstrap Table Chinese translation
  * Author: Zhixin Wen<wenzhixin2010@gmail.com>
  */
-(function($) {
+;(function($) {
     'use strict';
 
     $.fn.bootstrapTable.locales['zh-TW'] = {

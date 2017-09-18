@@ -1,44 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="台灣銀行匯率即時查詢">
-    <meta name="author" content="">
-
+    <meta name="keywords" content="匯率,換匯,台幣,美金,美元,日幣,日圓,港幣,歐元">   
+    <meta name="description" content="銀行匯率即時查詢">
+    <meta content="追匯站 - 即時銀行匯率查詢" property="og:title">
+    <meta content="銀行匯率即時查詢" property="og:description">
     <title>追匯站 - 即時銀行匯率查詢</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="css/fonts.css">
-
-    <!-- Theme CSS -->
-    <link href="css/grayscale.min.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="vendor/theme/js/html5shiv.js"></script>
-        <script src="vendor/theme/js/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Table Css -->
-
-    <link href="vendor/bootstrap/css/fresh-bootstrap-table.css" rel="stylesheet" />
-    <!-- Form CSS -->
-
-    <link rel="stylesheet" href="vendor/theme/css/normalize.min.css">
-    <link rel="stylesheet" href="css/from_style.css">
-    <link rel="stylesheet" href="vendor/select/css/bootstrap-select.css">
-
+    <link href="build/css/all.min.css" rel="stylesheet">
+    <link rel="icon" tpye="image/x-icon" href="/favicon.ico">
 </head>
-
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
     <!-- Navigation -->
@@ -53,10 +26,8 @@
                 </a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
@@ -173,17 +144,7 @@
 
                     </div>
                     <div class="col-md-8 col-md-offset-2">
-                       <!-- test -->
                        <div class="fresh-table full-color-red">
-                        <!--    Available colors for the full background: full-color-blue, full-color-azure, full-color-green, full-color-red, full-color-orange                  
-                                Available colors only for the toolbar: toolbar-color-blue, toolbar-color-azure, toolbar-color-green, toolbar-color-red, toolbar-color-orange
-                        -->
-                            
-                            <!-- <div class="toolbar"> -->
-                                
-                                <!-- <button id="alertBtn" class="btn btn-default">Alert</button> -->
-                            <!-- </div> -->
-                            
                             <table id="fresh-table" class="table">
                                 <thead>
                                     <th data-field="bankName">銀行</th>
@@ -193,90 +154,13 @@
                                     <th data-field="bksell" data-sortable="true"">即期賣出</th>
                                 </thead>
                                 <tbody>
-                                    <!-- <tr>
-                                        <td>台灣銀行</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                    </tr>
-                                    <tr>
-                                        <td>台灣銀行</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                    </tr>
-                                    <tr>
-                                        <td>台灣銀行</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                    </tr>
-                                    <tr>
-                                        <td>台灣銀行</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                    </tr>
-                                    <tr>
-                                        <td>台灣銀行</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                    </tr>
-                                    <tr>
-                                        <td>台灣銀行</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                    </tr>
-                                    <tr>
-                                        <td>台灣銀行</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                    </tr>
-                                    <tr>
-                                        <td>台灣銀行</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                    </tr>
-                                    <tr>
-                                        <td>台灣銀行</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                    </tr>
-                                    <tr>
-                                        <td>台灣銀行</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                    </tr>
-                                    <tr>
-                                        <td>台灣銀行</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                        <td>31.06524</td>
-                                    </tr> -->
+                                    
                                 </tbody>
                             </table>
                         </div>
                         
                         
                     </div>
-                       <!-- test -->
                     </div>
                 </div>
             </div>
@@ -501,28 +385,7 @@
             <p>Copyright &copy; Exrate.info 2017</p>
         </div>
     </footer>
+    <script src="build/js/all.min.js"></script>
 
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/theme/js/jquery.easing.min.js"></script>
-
-
-    <!-- Theme JavaScript -->
-    <script src="js/grayscale.js"></script>
-
-
-    <script src="vendor/jquery/bootstrap-table.js"></script>
-    <script src="vendor/theme/js/bootstrap_table-ch.js"></script>
-    <script type="text/javascript" src="vendor/theme/js/particles.min.js"></script>
-    <script src="vendor/select/js/bootstrap-select.js"></script>
-    <script src="js/socket/socket.io.js"></script>
-    <script src="js/socket/lz-string.min.js"></script>
-    <script src="js/from_index.js"></script>
-    <script src="js/webpjs-0.0.2.min.js"></script>
 </body>
 </html>
