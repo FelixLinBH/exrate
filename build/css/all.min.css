@@ -1,15 +1,35 @@
+.icon-AUD,.icon-CAD,.icon-CHF,.icon-CNY,.icon-EUR,.icon-GBP,.icon-HKD,.icon-IDR,.icon-JPY,.icon-MYR,.icon-NZD,.icon-PHP,.icon-SEK,.icon-SGD,.icon-THB,.icon-USD,.icon-VND,.icon-ZAR{background-image:url(sprite.png);width:50px;height:50px}
+.label,audio,canvas,progress,sub,sup,video{vertical-align:baseline}
+*,:after,:before,input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box}
+.btn-group>.btn-group,.btn-toolbar .btn,.btn-toolbar .btn-group,.btn-toolbar .input-group,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.dropdown-menu{float:left}
+.navbar-fixed-bottom .navbar-collapse,.navbar-fixed-top .navbar-collapse,.pre-scrollable{max-height:340px}
+.fa,.glyphicon{-moz-osx-font-smoothing:grayscale}
+.icon-AUD{background-position:-55px 0}
+.icon-CAD{background-position:-165px 0}
+.icon-CHF{background-position:0 -55px}
+.icon-CNY{background-position:-55px -55px}
+.icon-EUR{background-position:-110px 0}
+.icon-GBP{background-position:-110px -55px}
+.icon-HKD{background-position:0 -110px}
+.icon-IDR{background-position:-55px -110px}
+.icon-JPY{background-position:-110px -110px}
+.icon-KRW{background-image:url(sprite.png);background-position:0 0;width:50px;height:50px}
+.icon-MYR{background-position:-165px -55px}
+.icon-NZD{background-position:-165px -110px}
+.icon-PHP{background-position:0 -165px}
+.icon-SEK{background-position:-55px -165px}
+.icon-SGD{background-position:-110px -165px}
+.icon-THB{background-position:-165px -165px}
+.icon-USD{background-position:-220px 0}
+.icon-VND{background-position:-220px -55px}
+.icon-ZAR{background-position:-220px -110px}
+.img-thumbnail,select[multiple],select[size],textarea.form-control{height:auto}
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-.label,audio,canvas,progress,sub,sup,video{vertical-align:baseline}
-*,:after,:before,input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box}
-.btn-group>.btn-group,.btn-toolbar .btn,.btn-toolbar .btn-group,.btn-toolbar .input-group,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.dropdown-menu{float:left}
-.img-thumbnail,select[multiple],select[size],textarea.form-control{height:auto}
-.navbar-fixed-bottom .navbar-collapse,.navbar-fixed-top .navbar-collapse,.pre-scrollable{max-height:340px}
-.fa,.glyphicon{-moz-osx-font-smoothing:grayscale}
 article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}
 a:active,a:hover{outline:0}
 mark{background:#ff0}
@@ -2505,7 +2525,7 @@ button.btn.dropdown-toggle.btn-default{background-color:#243746}
 .row-flag .item{margin-top:3px;margin-bottom:3px;display:inline-block}
 .row-flag .item.select,.row-flag .item:hover{border:1px solid}
 .row-flag .item .label{display:block}
-.row-flag img{margin-left:5px;margin-right:5px;height:50px}
+.row-flag .icon-div{margin-left:5px;margin-right:5px}
 .nav.nav-justified>li>a{position:relative}
 .nav.nav-justified>li>a:focus,.nav.nav-justified>li>a:hover{background-color:transparent}
 .nav.nav-justified>li>a>.quote{position:absolute;left:0;top:0;opacity:0;width:30px;height:30px;padding:5px;background-color:#13c0ba;border-radius:15px;color:#fff}

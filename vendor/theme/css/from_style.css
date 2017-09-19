@@ -387,10 +387,10 @@ button.btn.dropdown-toggle.btn-default {
         .row-flag .item .label{
             display: block;
         }
-        .row-flag img{
+        .row-flag .icon-div{
             margin-left: 5px;
             margin-right: 5px;
-            height: 50px;
+            /*height: 50px;*/
         }
     /*profile*/
     .nav.nav-justified > li > a { position: relative; }
