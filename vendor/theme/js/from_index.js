@@ -185,7 +185,7 @@ $(document).ready(function() {
 
     });
 
-    var socket = io();
+    var socket = io({transports: ['websocket']});
     socket.on('connect', function() {
         console.log("connect");
     });
