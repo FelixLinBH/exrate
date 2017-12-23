@@ -52,6 +52,12 @@ return gulp.src('./img/flag/new/*.png')
     .pipe(gulp.dest('./img/flag/new_resize/'));
 });
 
+gulp.task('resize-os-icon', function resize () {
+return gulp.src('./img/flag/os/*.png')
+    .pipe(imageResize({width: 80, height: 80}))
+    .pipe(gulp.dest('./img/flag/new_resize/'));
+});
+
 gulp.task('sprite', function () {
   var spriteData = gulp.src('./img/flag/new_resize/*.png')
   .pipe(spritesmith({
@@ -69,4 +75,4 @@ gulp.task('sprite-move',function(){
     .pipe(gulp.dest('./build/css'));
 });
 
-gulp.task('default',['resize-icon','sprite','minify-css','fonts-move','uglify','webp-move','sprite-move']);
+gulp.task('default',['resize-icon','resize-os-icon','sprite','minify-css','fonts-move','uglify','webp-move','sprite-move']);

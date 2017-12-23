@@ -4,25 +4,29 @@
 .btn-group>.btn-group,.btn-toolbar .btn,.btn-toolbar .btn-group,.btn-toolbar .input-group,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.dropdown-menu{float:left}
 .navbar-fixed-bottom .navbar-collapse,.navbar-fixed-top .navbar-collapse,.pre-scrollable{max-height:340px}
 .fa,.glyphicon{-moz-osx-font-smoothing:grayscale}
-.icon-AUD{background-position:-55px 0}
-.icon-CAD{background-position:-165px 0}
-.icon-CHF{background-position:0 -55px}
-.icon-CNY{background-position:-55px -55px}
-.icon-EUR{background-position:-110px 0}
-.icon-GBP{background-position:-110px -55px}
-.icon-HKD{background-position:0 -110px}
-.icon-IDR{background-position:-55px -110px}
-.icon-JPY{background-position:-110px -110px}
-.icon-KRW{background-image:url(sprite.png);background-position:0 0;width:50px;height:50px}
-.icon-MYR{background-position:-165px -55px}
-.icon-NZD{background-position:-165px -110px}
-.icon-PHP{background-position:0 -165px}
-.icon-SEK{background-position:-55px -165px}
-.icon-SGD{background-position:-110px -165px}
-.icon-THB{background-position:-165px -165px}
-.icon-USD{background-position:-220px 0}
-.icon-VND{background-position:-220px -55px}
-.icon-ZAR{background-position:-220px -110px}
+.icon-AUD{background-position:-220px -225px}
+.icon-CAD{background-position:-225px 0}
+.icon-CHF{background-position:-280px 0}
+.icon-CNY{background-position:-85px -85px}
+.icon-EUR{background-position:-170px 0}
+.icon-GBP{background-position:-170px -55px}
+.icon-HKD{background-position:-170px -110px}
+.icon-IDR{background-position:0 -170px}
+.icon-JPY{background-position:-55px -170px}
+.icon-KRW{background-image:url(sprite.png);background-position:-110px -170px;width:50px;height:50px}
+.icon-MYR{background-position:-165px -170px}
+.icon-NZD{background-position:-280px -55px}
+.icon-PHP{background-position:-225px -55px}
+.icon-SEK{background-position:-225px -110px}
+.icon-SGD{background-position:-225px -165px}
+.icon-THB{background-position:0 -225px}
+.icon-USD{background-position:-55px -225px}
+.icon-VND{background-position:-110px -225px}
+.icon-ZAR{background-position:-165px -225px}
+.icon-linux,.icon-mac,.icon-win{background-image:url(sprite.png);width:80px;height:80px}
+.icon-linux{background-position:-85px 0}
+.icon-mac{background-position:0 -85px}
+.icon-win{background-position:0 0}
 .img-thumbnail,select[multiple],select[size],textarea.form-control{height:auto}
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -2525,7 +2529,7 @@ button.btn.dropdown-toggle.btn-default{background-color:#243746}
 .row-flag .item{margin-top:3px;margin-bottom:3px;display:inline-block}
 .row-flag .item.select,.row-flag .item:hover{border:1px solid;margin:2px -1px}
 .row-flag .item .label{display:block}
-.row-flag .icon-div{margin-left:5px;margin-right:5px;cursor: pointer;}
+.row-flag .icon-div{margin-left:5px;margin-right:5px}
 .nav.nav-justified>li>a{position:relative}
 .nav.nav-justified>li>a:focus,.nav.nav-justified>li>a:hover{background-color:transparent}
 .nav.nav-justified>li>a>.quote{position:absolute;left:0;top:0;opacity:0;width:30px;height:30px;padding:5px;background-color:#13c0ba;border-radius:15px;color:#fff}
@@ -2586,14 +2590,11 @@ a:focus,a:hover{color:#1d9b6c}
 50%{-moz-transform:scale(1.2);transform:scale(1.2)}
 }
 .content-section{padding-top:100px}
-.download-section{width:100%;padding:50px 0;color:#fff;background:url(../img/downloads-bg.webp) center center no-repeat #000;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;-o-background-size:cover}
-#map{width:100%;height:200px;margin-top:100px}
-.download-section{padding:100px 0}
-#map{height:400px;margin-top:250px}
-}
+.download-section{width:100%;color:#fff;background:url(../img/downloads-bg.webp) center center no-repeat #000;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;-o-background-size:cover;padding:100px 0}
 [type=checkbox],[type=radio],legend{box-sizing:border-box;padding:0}
+#map{width:100%;height:400px;margin-top:250px}
 .btn{font-weight:400;-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;transition:all .3s ease-in-out;border-radius:0}
-.btn-default{border:1px solid #fff;color:#fff;background-color:transparent}
+.btn-default{border:1px solid #42DCA3;color:#42DCA3;background-color:transparent}
 .btn-default:focus,.btn-default:hover{border:1px solid #42DCA3;outline:0;color:#000;background-color:#42DCA3}
 ul.banner-social-buttons{margin-top:0}
 @media (max-width:1199px){ul.banner-social-buttons{margin-top:15px}
